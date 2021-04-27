@@ -2,7 +2,7 @@
   "name": "extensions/customer-status",
   "version": "1.0.1",
   "minimum-stability": "dev",
-  "description": "N/A",
+  "description": "Customer status",
   "type": "magento2-module",
   "require": {
     "magento/framework": "*",
