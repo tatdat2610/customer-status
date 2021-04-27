@@ -42,6 +42,6 @@ class Index extends \Magento\Framework\View\Element\Template
      */
     public function getStatusPostUrl()
     {
-        return $this->urlBuilder->getUrl('extensions/customerstatus/edit');
+        return $this->urlBuilder->getUrl('extensions/status/edit');
     }
 }

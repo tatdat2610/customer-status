@@ -15,5 +15,4 @@
             </argument>
         </arguments>
     </type>
-    <preference for="Magento\Theme\Block\Html\Header" type="Extensions\CustomerStatus\Block\Html\Header"/>
 </config>

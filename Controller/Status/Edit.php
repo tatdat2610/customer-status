@@ -26,7 +26,7 @@ class Edit extends \Magento\Framework\App\Action\Action
     /**
      * @var CustomerRepositoryInterface
      */
-    protected $_customerRepoInterface;
+    protected $customerRepoInterface;
 
     /**
      * @var Session
@@ -47,26 +47,22 @@ class Edit extends \Magento\Framework\App\Action\Action
         Session $customerSession
     ) {
         $this->_pageFactory = $pageFactory;
-        $this->_customerRepoInterface = $customerRepoInterface;
+        $this->customerRepoInterface = $customerRepoInterface;
         $this->customerSession = $customerSession;
         return parent::__construct($context);
     }
 
     /**
-     * @return \Magento\Framework\App\ResponseInterface|\Magento\Framework\Controller\Result\Redirect|\Magento\Framework\Controller\ResultInterface
-     * @throws \Magento\Framework\Exception\InputException
-     * @throws \Magento\Framework\Exception\LocalizedException
-     * @throws \Magento\Framework\Exception\NoSuchEntityException
-     * @throws \Magento\Framework\Exception\State\InputMismatchException
+     * @return saving customer status
      */
     public function execute()
     {
-        $customer = $this->_customerRepoInterface->get($this->customerSession->getCustomer()->getEmail(), $this->customerSession->getCustomer()->getId());
+        $customer = $this->customerRepoInterface->get($this->customerSession->getCustomer()->getEmail(), $this->customerSession->getCustomer()->getId());
         $customer->setCustomAttribute('attr_status', $this->_request->getParam('status'));
-        $this->_customerRepoInterface->save($customer);
+        $this->customerRepoInterface->save($customer);
 
         $resultRedirect = $this->resultRedirectFactory->create();
-        $resultRedirect->setPath('extensions/customerstatus/index');
+        $resultRedirect->setPath('extensions/status/index');
         return $resultRedirect;
     }
 }
