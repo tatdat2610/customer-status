@@ -3,7 +3,7 @@
 
 ## Installation
     Go to root folder and run command
-        composer require extensions/customer-status:master
+        composer require extensions/customer-status:dev-master
         php bin/magento setup:upgrade
         php bin/magento module:enable Extensions_CustomerStatus
 
