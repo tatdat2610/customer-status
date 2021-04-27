@@ -1,15 +1,11 @@
 <?xml version="1.0"?>
-<!--
-/**
- * @package     Extensions\Status
- * @author      Brian Pham <brian.pham261090@gmail.com>
- * @copyright   Copyright © 2021 Brian Pham, Inc. All Rights Reserved. *
- */
--->
-<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceBlock name="top.links">
             <block class="Magento\Theme\Block\Html\Header" name="header" as="header" before="-">
+                <action method="setTemplate">
+                    <argument name="template" xsi:type="string">Extensions_CustomerStatus::html/header.phtml</argument>
+                </action>
                 <arguments>
                     <argument name="show_part" xsi:type="string">welcome</argument>
                 </arguments>
@@ -17,3 +13,4 @@
         </referenceBlock>
     </body>
 </page>
+

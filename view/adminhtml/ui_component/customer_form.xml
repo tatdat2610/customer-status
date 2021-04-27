@@ -6,8 +6,7 @@
  * @copyright   Copyright © 2021 Brian Pham, Inc. All Rights Reserved. *
  */
 -->
-<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <fieldset name="customer">
         <field name="attr_status">
             <argument name="data" xsi:type="array">
@@ -17,26 +16,25 @@
             </argument>
         </field>
     </fieldset>
-
     <fieldset name="fieldset_attr_status">
-       <argument name="data" xsi:type="array">
-           <item name="config" xsi:type="array">
-               <item name="label" xsi:type="string" translate="true">Status</item>
-           </item>
-       </argument>
-       <field name="attr_status">
-           <argument name="data" xsi:type="array">
-               <item name="config" xsi:type="array">
-                   <item name="label" xsi:type="string">Status</item>
-                   <item name="visible" xsi:type="boolean">true</item>
-                   <item name="dataScope" xsi:type="string">attr_status</item>
-                   <item name="dataType" xsi:type="string">varchar</item>
-                   <item name="formElement" xsi:type="string">input</item>
-                   <item name="imports" xsi:type="array">
-                       <item name="default" xsi:type="string">${ $.provider }:data.customer.attr_status</item>
-                   </item>
-               </item>
-           </argument>
-       </field>
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Status</item>
+            </item>
+        </argument>
+        <field name="custom_attribute.attr_status">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Status</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataScope" xsi:type="string">attr_status</item>
+                    <item name="dataType" xsi:type="string">varchar</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="imports" xsi:type="array">
+                        <item name="default" xsi:type="string">${ $.provider }:data.customer.attr_status</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
     </fieldset>
 </form>

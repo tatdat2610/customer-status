@@ -15,7 +15,7 @@
             </action>
         </referenceBlock>
         <referenceContainer name="content">
-            <block class="Extensions\CustomerStatus\Block\CustomerStatus\Index" name="extensions_status_index" template="Extensions_CustomerStatus::index.phtml" />
+            <block class="Extensions\CustomerStatus\Block\Status\Index" name="extensions_status_index" template="Extensions_CustomerStatus::index.phtml" />
         </referenceContainer>
     </body>
 </page>

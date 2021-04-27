@@ -1,6 +1,6 @@
 {
   "name": "extensions/customer-status",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "minimum-stability": "dev",
   "description": "Customer status",
   "type": "magento2-module",
