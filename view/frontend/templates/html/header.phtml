@@ -1,0 +1,61 @@
+<?php
+/**
+ * @package     Extensions\Status
+ * @author      Brian Pham <brian.pham261090@gmail.com>
+ * @copyright   Copyright © 2021 Brian Pham, Inc. All Rights Reserved. *
+ */
+
+/**
+ * @var \Magento\Theme\Block\Html\Header $block
+ */
+$welcomeMessage = $block->getWelcome();
+?>
+<?php if ($block->getShowPart() == 'welcome') : ?>
+    <li class="greet welcome">
+        <!-- ko scope: 'customer' -->
+            <!-- ko if: customer().fullname  -->
+            <span class="logged-in"
+                  data-bind="text: new String('<?= $block->escapeHtml(__('Welcome , %1!', '%1')) ?>').replace('%1', customer().fullname)">
+            </span>
+
+            <!-- ko scope: 'header' -->
+            <span data-bind="html: header().status"></span>
+            <!-- /ko -->
+
+            <!-- /ko -->
+            <!-- ko ifnot: customer().fullname  -->
+            <span class="not-logged-in"
+                  data-bind='html:"<?= $block->escapeHtml($welcomeMessage) ?>"'></span>
+            <?= $block->getBlockHtml('header.additional') ?>
+            <!-- /ko -->
+        <!-- /ko -->
+    </li>
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "customer": {
+                        "component": "Magento_Customer/js/view/customer"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+    <script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "header": {
+                        "component": "Extensions_CustomerStatus/js/header"
+                    }
+                }
+            }
+        }
+    }
+    </script>
+<?php elseif ($block->getShowPart() == 'other') :?>
+    <?= $block->getChildHtml() ?>
+<?php endif ?>

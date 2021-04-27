@@ -1,0 +1,62 @@
+<?php
+/**
+ * @package     Extensions\Status
+ * @author      Brian Pham <brian.pham261090@gmail.com>
+ * @copyright   Copyright © 2021 Brian Pham, Inc. All Rights Reserved. *
+ */
+
+/** @var \Extensions\CustomerStatus\Block\CustomerStatus\Index $block */
+/** @var \Magento\Framework\Escaper $escaper */
+?>
+<form class="form-address-edit"
+      action="<?= $block->getStatusPostUrl() ?>"
+      method="post"
+      id="form-validate"
+      enctype="multipart/form-data"
+      data-hasrequired="<?= $escaper->escapeHtmlAttr(__('* Required Fields')) ?>">
+    <fieldset class="fieldset info">
+        <legend class="legend"><span><?= $escaper->escapeHtmlAttr(__('Account Status')) ?></span></legend>
+        <div class="field status">
+            <label class="label" for="status">
+                <span><?= $escaper->escapeHtmlAttr(__('Status')) ?></span>
+            </label>
+            <div class="control" data-bind="scope: 'section'">
+                <input type="text"
+                       name="status"
+                       data-bind="textInput: customsection().status"
+                       title="<?= $escaper->escapeHtmlAttr(__('status')) ?>"
+                       class="input-text-status"
+                       id="status">
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="fieldset additional_info">
+    </fieldset>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit"
+                    class="action save primary"
+                    title="<?= $escaper->escapeHtmlAttr(__('Save')) ?>">
+                <span><?= $escaper->escapeHtml(__('Save')) ?></span>
+            </button>
+        </div>
+        <div class="secondary">
+            <a class="action back" href="">
+                <span><?= $escaper->escapeHtml(__('Go back')) ?></span>
+            </a>
+        </div>
+    </div>
+</form>
+<script type="text/x-magento-init">
+    {
+    	"*": {
+        	"Magento_Ui/js/core/app": {
+            	"components": {
+                	"section": {
+                    	"component": "Extensions_CustomerStatus/js/section"
+                	}
+            	}
+        	}
+    	}
+    }
+</script>

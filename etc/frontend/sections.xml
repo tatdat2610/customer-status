@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Extensions\Status
+ * @author      Brian Pham <brian.pham261090@gmail.com>
+ * @copyright   Copyright © 2021 Brian Pham, Inc. All Rights Reserved. *
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
+    <action name="*">
+        <section name="status_section"/>
+    </action>
+</config>

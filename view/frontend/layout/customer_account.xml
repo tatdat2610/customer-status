@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Extensions\Status
+ * @author      Brian Pham <brian.pham261090@gmail.com>
+ * @copyright   Copyright © 2021 Brian Pham, Inc. All Rights Reserved. *
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Customer My Account (All Pages)" design_abstraction="custom">
+    <body>
+        <referenceContainer name="customer_account_navigation">
+            <block class="Magento\Customer\Block\Account\SortLinkInterface" name="customer-account-navigation-account-link">
+                <arguments>
+                    <argument name="label" xsi:type="string" translate="true">Status</argument>
+                    <argument name="path" xsi:type="string">extensions/status</argument>
+                    <argument name="sortOrder" xsi:type="number">10</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

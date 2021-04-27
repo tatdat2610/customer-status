@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     Extensions\Status
+ * @author      Brian Pham <brian.pham261090@gmail.com>
+ * @copyright   Copyright © 2021 Brian Pham, Inc. All Rights Reserved. *
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Customer My Account (All Pages)" design_abstraction="custom">
+    <update handle="customer_account"/>
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Account Status</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Extensions\CustomerStatus\Block\CustomerStatus\Index" name="extensions_status_index" template="Extensions_CustomerStatus::index.phtml" />
+        </referenceContainer>
+    </body>
+</page>
